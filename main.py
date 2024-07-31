@@ -9,7 +9,7 @@ def cal_bmi():
     data = request.get_json()
     weight = float(data['weight'])
     height = float(data['height'])
-    bmi = weight/(height ** 2)
+    bmi = weight/((height/100) ** 2)
     return  jsonify(bmi)
 
 @app.route('/')
